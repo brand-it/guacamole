@@ -1,3 +1,6 @@
-
-<%= link_to img_color_palette(mana.color, mana.colorless), :action => 'edit' %>
-<%= link_to 'Destroy', mana, :method => :delete %>
+<% if admin? -%>
+	<%= link_to img_color_palette(mana.color, mana.colorless), edit_mana_path(mana) %>
+	<%= link_to 'Destroy', mana, :method => :delete %>
+<% else %>
+	<%= img_color_palette(mana.color, mana.colorless)%>
+<% end -%>

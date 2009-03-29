@@ -2,7 +2,7 @@
 
 <% error_handling_form_for(@mana, :url => {:action => :update, :controller => :manas}) do |f| -%> 
 	<%= f.select :color, color_select %>
-	<%= f.select :colorless, numbers %>
+	<%= f.select :colorless, numbers, {:include_blank => :true} %>
 	<%= f.hidden_field :card_id %>
 	<%= f.submit 'Save', :class => "button" %>	
 <% end -%>

@@ -13,8 +13,11 @@ class CardsController < ApplicationController
   end
   
   def search
-    
-    @cards = Card.search params[:search]
+    unless params[:search] == ""
+      @cards = Card.search params[:search]
+    else
+      @cards = Card.find(:all, :order => :name)
+    end
     respond_to do |format|
       format.html { render :index }
       format.xml  { render :xml => @cards }
