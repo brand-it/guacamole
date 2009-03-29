@@ -7,3 +7,4 @@ log
 .autotest
 public/images
 db/sphinx
+config/development.sphinx.conf
