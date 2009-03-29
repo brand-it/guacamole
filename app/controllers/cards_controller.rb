@@ -1,7 +1,7 @@
 class CardsController < ApplicationController
   
   before_filter :admin, :only => [:new, :edit, :create, :destroy, :update]
-  
+  protect_from_forgery :except => [:auto_complete_for_card_search] 
   # GET /cards
   # GET /cards.xml
   def index
@@ -13,8 +13,8 @@ class CardsController < ApplicationController
   end
   
   def search
-    unless params[:search] == ""
-      @cards = Card.search params[:search]
+    unless params[:card][:search] == ""
+      @cards = Card.search params[:card][:search]
     else
       @cards = Card.find(:all, :order => :name)
     end
@@ -22,6 +22,10 @@ class CardsController < ApplicationController
       format.html { render :index }
       format.xml  { render :xml => @cards }
     end
+  end
+  
+  def auto_complete_for_card_search
+    @cards = Card.search params[:search]
   end
 
   # GET /cards/1

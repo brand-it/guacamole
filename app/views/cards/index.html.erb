@@ -2,13 +2,9 @@
 
 
 <% form_tag :controller => :cards, :action => :search do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
+    <%= text_field_with_auto_complete :card, :search, { :size => 15 }, { :param_name => 'search' }  %>
+	<%= submit_tag 'Submit', :class => "button" %>	
 <% end %>
-
-<%# debug @cards %>
 
 <table>
   <tr>

@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def create
     logout_keeping_session!
     @user = User.new(params[:user])
+    @user.access_level = 1
     success = @user && @user.save
     if success && @user.errors.empty?
             # Protects against session fixation attacks, causes request forgery

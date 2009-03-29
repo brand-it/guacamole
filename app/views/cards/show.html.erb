@@ -1,5 +1,7 @@
 
-<%= link_to 'Edit', edit_card_path(@card) %> |
+<% if admin? %>
+	<%= link_to 'Edit', edit_card_path(@card) %> |
+<% end -%>
 <%= link_to 'Back', cards_path %>
 <h1><%= @card.name.upcase %></h1>
 
