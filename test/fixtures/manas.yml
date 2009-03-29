@@ -1,0 +1,10 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+    color: 16
+    card: one
+
+two:
+  color: 32
+  colorless: 2
+  card: one

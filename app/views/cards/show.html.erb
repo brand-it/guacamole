@@ -1,0 +1,16 @@
+
+<%= link_to 'Edit', edit_card_path(@card) %> |
+<%= link_to 'Back', cards_path %>
+<h1><%= @card.name.upcase %></h1>
+
+
+<%= link_to image_tag(@card.image.public_filename(:small)), @card.image.public_filename %>
+<div><%= redcloth(@card.kind) %></div>
+<div><%= redcloth(@card.ablity) %></div>
+<div style="font-style: italic;"><%= redcloth(@card.flavor_text) %></div>
+
+
+<div id='that'>
+	<%= render @card.manas %>
+</div>
+<%= render :partial => '/manas/new' %>

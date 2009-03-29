@@ -1,0 +1,15 @@
+<h1>Editing cards</h1>
+
+<%= link_to 'Show', @card %> |
+<%= link_to 'Back', cards_path %>
+
+
+<%= image_tag(@card.image.public_filename(:small)) %>
+<% error_handling_form_for(@card) do |f| -%> 
+	<%= f.text_field :name %>
+	<%= f.text_field :kind, :label => :Type %>
+	<%= f.text_area :ablity %>
+	<%= f.text_area :flavor_text %>
+	<%= f.select :image_id, Image.images %>
+	<%= f.submit 'Save', :class => "button" %>
+<% end -%>

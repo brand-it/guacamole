@@ -1,0 +1,8 @@
+<% error_handling_form_for(@card) do |f| -%> 
+	<%= f.text_field :name %>
+	<%= f.text_field :ablity %>
+	<%= f.text_area :flavor_text %>
+	<%= f.submit 'Save', :class => "button" %>	
+<% end -%>
+
+<%= link_to 'Back', cards_path %>

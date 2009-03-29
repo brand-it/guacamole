@@ -1,0 +1,10 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+    name: Cool
+    kind: Creature
+    ablity: Do something
+    flavor_text: These are things we can do
+    created_at: Time.now
+    updated_at: Time.now
+    image: one

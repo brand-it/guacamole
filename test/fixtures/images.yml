@@ -1,0 +1,24 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+    size: 16218923
+    content_type: image/jpeg
+    filename: woodland_changeling.jpg
+    height: 700
+    width: 489
+two:
+    size: 179858
+    content_type: image/jpeg
+    filename: woodland_changeling_small.jpg
+    height: 286
+    width: 200
+    parent: one
+    thumbnail: small
+three:
+    size: 109863
+    content_type: image/type
+    filename: woodland_changeling_small.jpg
+    height: 72
+    width: 50
+    parent: one
+    thumbnail: thumb

@@ -1,0 +1,27 @@
+<h1>Listing cards</h1>
+
+
+<% form_tag :controller => :cards, :action => :search do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+<%# debug @cards %>
+
+<table>
+  <tr>
+  </tr>
+
+<% for card in @cards %>
+  <tr>
+	<td><%= link_to image_tag(card.image.public_filename(:thumb)), card %>
+    <td><%= link_to card.name.upcase, card %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New cards', new_card_path %>

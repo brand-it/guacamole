@@ -1,0 +1,7 @@
+.DS_Store
+log/*.log
+tmp/**/*
+db/schema.rb
+config/database.yml
+log
+.autotest

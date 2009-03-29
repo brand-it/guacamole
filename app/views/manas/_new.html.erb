@@ -1,0 +1,6 @@
+<% error_handling_form_for(:mana, :url => {:action => :create, :controller => :manas }) do |f| -%> 
+	<%= f.select :color, color_select %>
+	<%= f.select :colorless, numbers, {:include_blank => :true, :selected => "0"} %>
+	<%= f.hidden_field :card_id, :value => params[:id] %>
+	<%= f.submit 'Save', :class => "button" %>	
+<% end -%>
