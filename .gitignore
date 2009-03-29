@@ -5,3 +5,4 @@ db/schema.rb
 config/database.yml
 log
 .autotest
+public/images
