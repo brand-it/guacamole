@@ -3,6 +3,7 @@ ActionController::Routing::Routes.draw do |map|
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.register '/register', :controller => 'users', :action => 'create'
   map.signup '/signup', :controller => 'users', :action => 'new'
+  
   map.resources :users
 
   map.resource :session
@@ -11,7 +12,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :manas
 
-  map.resources :cards, :collection => { :search => :any }
+  map.resources :cards, :collection => { :search => :any, :auto_complete_for_card_search => :any }
 
   # The priority is based upon order of creation: first created -> highest priority.
 

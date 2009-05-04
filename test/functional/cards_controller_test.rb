@@ -3,8 +3,8 @@ require 'test_helper'
 class CardsControllerTest < ActionController::TestCase
   
   def test_should_get_search
-    post :search, :search => cards(:one).name
-    assert_redirected_to card_path(cards(:one))
+    post :search, {:card => {:search => cards(:one).name}}
+    assert_response :success
   end
   
   
@@ -31,15 +31,6 @@ class CardsControllerTest < ActionController::TestCase
     end
     
     assert_redirected_to new_session_path
-  end
-
-  def test_should_create_cards
-    authorize_as :quentin
-    assert_difference('Card.count') do
-      post :create, :card => { :name => "String", :kind => "Name", :ablity => "It can fly" }
-    end
-
-    assert_redirected_to card_path(assigns(:card))
   end
 
   def test_should_show_cards

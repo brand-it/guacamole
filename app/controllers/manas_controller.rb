@@ -43,15 +43,15 @@ class ManasController < ApplicationController
   # POST /manas
   # POST /manas.xml
   def create
-    @mana = Mana.new(params[:mana])
+    params[:count][:number].to_i.times {
+      @mana = Mana.new(params[:mana])
+      @mana.save!
+      }
     respond_to do |format|
-      if @mana.save
-        #render :update do |page|
-        #  page.insert_html :top, "other", :partial => "show", :locals => { :mana => @mana }
-        #end
-        flash[:notice] = 'Mana was successfully created.'
-        format.html { redirect_to card_path(@mana.card_id) }
-      end
+      #render :update do |page|
+      #  page.insert_html :top, "other", :partial => "show", :locals => { :mana => @mana }
+      #end
+      format.html { redirect_to card_path(@mana.card_id) }
     end
   end
 

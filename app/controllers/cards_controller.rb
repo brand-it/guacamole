@@ -13,11 +13,7 @@ class CardsController < ApplicationController
   end
   
   def search
-    unless params[:card][:search] == ""
-      @cards = Card.search params[:card][:search]
-    else
-      @cards = Card.find(:all, :order => :name)
-    end
+    @cards = Card.search params[:card][:search]
     respond_to do |format|
       format.html { render :index }
       format.xml  { render :xml => @cards }
@@ -25,7 +21,7 @@ class CardsController < ApplicationController
   end
   
   def auto_complete_for_card_search
-    @cards = Card.search params[:search]
+    @cards = Card.find(:all, :conditions => ["name LIKE ?", "%" + params[:search] + "%"], :order => :name)
   end
 
   # GET /cards/1

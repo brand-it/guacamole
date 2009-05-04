@@ -1,6 +1,8 @@
 <% error_handling_form_for(:mana, :url => {:action => :create, :controller => :manas }) do |f| -%> 
 	<%= f.select :color, color_select %>
-	<%= f.select :colorless, numbers, {:include_blank => :true, :selected => "0"} %>
+	<%= label_tag("number", "Number to Create" ) %>
+	<%= select :count, :number, [1, 2, 3, 4, 5, 6, 7, 8] %>
+	<%= f.select :colorless, numbers %>
 	<%= f.hidden_field :card_id, :value => params[:id] %>
 	<%= f.submit 'Save', :class => "button" %>	
 <% end -%>

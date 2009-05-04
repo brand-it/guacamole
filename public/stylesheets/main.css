@@ -1,3 +1,13 @@
+#div1 {
+    position:absolute; /*SETS A FIXED POSITION*/ 
+    top:60px;
+    left:300px; 
+    background:#0099CC;
+    color:#FFFFFF; /*SETS THE FONT COLOR*/ 
+    padding:20px;
+}
+
+
 #flavor_text {
 	font-style: italic;
 }

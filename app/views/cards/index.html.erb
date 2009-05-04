@@ -2,17 +2,24 @@
 
 
 <% form_tag :controller => :cards, :action => :search do %>
-    <%= text_field_with_auto_complete :card, :search, { :size => 15 }, { :param_name => 'search' }  %>
+    <%= text_field_with_auto_complete :card, :search, { :size => 30 }, { :param_name => 'search' }  %>
 	<%= submit_tag 'Submit', :class => "button" %>	
 <% end %>
 
+<input id="Show" type="text" size="30" name="tree[Show]" autocomplete="off"/>
+
+<div id="div1">
+	This is some text
+</div>
 <table>
   <tr>
   </tr>
 
+
 <% for card in @cards %>
   <tr>
-	<td><%= link_to image_tag(card.image.public_filename(:thumb)), card %>
+	<td><%= link_to image_tag(card.image.public_filename(:thumb)), card, :onmouseover =>
+	"getMouseXY(event, 'div1', 1)", :onmouseout => "toggleDiv(event, 'div1', 0)"%>
     <td><%= link_to card.name.upcase, card %></td>
   </tr>
 <% end %>

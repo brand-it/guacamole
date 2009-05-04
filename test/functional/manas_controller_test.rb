@@ -16,7 +16,6 @@ class ManasControllerTest < ActionController::TestCase
     assert_redirected_to new_session_path
   end
 
-  test 
 
   test "should get edit" do
     authorize_as :quentin

@@ -1,8 +1,6 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
-  
-  
-  
+
   def colors
     return ["", 0],["White", 1],["Blue", 2],["Red", 3],["Green", 4],["Black", 5],["Colorless", 6]
   end
@@ -34,6 +32,17 @@ module ApplicationHelper
       return "Black"
     elsif number == 32
       return "Colorless"
+    end
+  end
+  
+  def words_to_images(text)
+    string = ""
+    text.split("hey").map do |a|
+      if a == "hey"
+         image_tag("mana/1.gif")
+      else
+        string += a
+      end
     end
   end
   
